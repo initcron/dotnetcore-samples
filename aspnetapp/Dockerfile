@@ -12,5 +12,7 @@ RUN dotnet publish -c release -o /app
 
 EXPOSE 80 
 
+WORKDIR /app
+
 CMD dotnet aspnetapp.dll
- 
+
