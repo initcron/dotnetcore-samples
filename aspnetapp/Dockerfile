@@ -5,7 +5,7 @@ RUN dotnet restore
 WORKDIR /source/aspnetapp
 RUN dotnet publish -c release -o /app 
 
-FROM mcr.microsoft.com/dotnet/core/runtime:3.1 AS RUN 
+FROM mcr.microsoft.com/dotnet/core/aspnet:3.1 AS RUN 
 WORKDIR /app
 COPY --from=build /app .
 EXPOSE 80 
