@@ -14,7 +14,7 @@ EXPOSE 80
 
 WORKDIR /app
 
-ENV ASPNETCORE_URLS http://*:80
+ENV ASPNETCORE_URLS=https://*:80
 
 CMD dotnet aspnetapp.dll
 
