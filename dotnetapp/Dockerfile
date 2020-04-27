@@ -1,17 +1,20 @@
-# https://hub.docker.com/_/microsoft-dotnet-core
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS build
 WORKDIR /source
 
-# copy csproj and restore as distinct layers
-COPY *.csproj .
-RUN dotnet restore
+# TODO: Copy source code to workdir 
+COPY
 
-# copy and publish app and libraries
-COPY . .
-RUN dotnet publish -c release -o /app --no-restore
+# TODO: Restore Dot Net Layers
+RUN 
 
-# final stage/image
-FROM mcr.microsoft.com/dotnet/core/runtime:3.1
+
+WORKDIR /source/dotnetapp
+
+# TODO: publish app and libraries to /app path
+RUN 
+
+
 WORKDIR /app
-COPY --from=build /app .
-ENTRYPOINT ["dotnet", "dotnetapp.dll"]
+
+# Launch .NET app by providing the command
+CMD
